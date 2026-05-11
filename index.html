@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="app-title">Unit Converter</h1>
+    <p class="subtitle">Convert length, weight, temperature & speed</p>
+
+    <!-- CATEGORY TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('length', this)">📏 Length</button>
+      <button class="tab" onclick="switchTab('weight', this)">⚖️ Weight</button>
+      <button class="tab" onclick="switchTab('temperature', this)">🌡️ Temp</button>
+      <button class="tab" onclick="switchTab('speed', this)">💨 Speed</button>
+    </div>
+
+    <!-- CONVERTER BOX -->
+    <div class="converter-box">
+      <div class="input-row">
+        <input type="number" id="inputVal" placeholder="Enter value" oninput="convert()"/>
+        <select id="fromUnit" onchange="convert()"></select>
+      </div>
+
+      <div class="swap-row">
+        <div class="result-display" id="resultDisplay">—</div>
+        <button class="swap-btn" onclick="swapUnits()">⇅ Swap</button>
+      </div>
+
+      <div class="to-row">
+        <span class="to-label">To:</span>
+        <select id="toUnit" onchange="convert()"></select>
+      </div>
+    </div>
+
+    <!-- ALL CONVERSIONS TABLE -->
+    <div class="all-conversions" id="allConversions"></div>
+
+  </div>
+
+  <footer>Day 11 of 120 · Kishalaya Sarangi · NIT Rourkela</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
